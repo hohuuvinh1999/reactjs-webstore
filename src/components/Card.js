@@ -2,8 +2,11 @@ import React, { Component } from 'react'
 
 export default class Card extends Component {
     render() {
+
         var { item } = this.props;
         // console.log(item);
+
+
         return (
             <div className="col-12 col-xs-12 col-sm-6 col-md-6 col-lg-4 p-2">
                 <div className="p-4" style={{ width: '100%', background: '#fff', minHeight: '260px' }}>

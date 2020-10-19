@@ -4,6 +4,7 @@ import Banner from './Banner';
 import CardContainer from './../containers/CardContainer';
 import NavBar2 from './NavBar2';
 import Item from './Item';
+import ItemsContainer from './../containers/ItemContainer';
 
 export default class HomeContent extends Component {
     render() {
@@ -15,9 +16,9 @@ export default class HomeContent extends Component {
                     <div className="mt-3" style={{ width: '90%', margin: 'auto' }}>
                         <CardContainer />
                         <NavBar2 />
-                        <div className="row m-0">
-                            <Item />
-                        </div>
+                        {/* <div className="row m-0"> */}
+                        <ItemsContainer />
+                        {/* </div> */}
                     </div>
                 </div>
             </div>

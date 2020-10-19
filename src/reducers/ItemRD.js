@@ -2,12 +2,12 @@ import * as Types from './../constants/ActionTypes';
 
 var initialState = [];
 
-const CardsRD = (state = initialState, action) => {
+const ItemRD = (state = initialState, action) => {
     switch (action.type) {
-        case Types.FETCH_CARDS:
-            state = action.cards;
+        case Types.FETCH_ITEMS:
+            state = action.items;
             return [...state];
         default: return [...state];
     }
 }
-export default CardsRD;
+export default ItemRD;

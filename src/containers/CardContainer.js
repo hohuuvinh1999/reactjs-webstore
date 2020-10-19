@@ -1,10 +1,12 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import Card from './../components/Card';
-
+import { actFetchCardsRequest } from './../actions/index';
 
 class CardContainer extends Component {
-
+    componentDidMount() {
+        this.props.fetchAllCards();
+    }
     render() {
         var { CardsRD } = this.props;
         // console.log(CardsRD);
@@ -31,4 +33,11 @@ const mapStateToProps = state => {
         CardsRD: state.CardsRD
     }
 }
-export default connect(mapStateToProps, null)(CardContainer);
+const mapDispatchToProps = (dispatch, props) => {
+    return {
+        fetchAllCards: () => {
+            dispatch(actFetchCardsRequest());
+        }
+    }
+}
+export default connect(mapStateToProps, mapDispatchToProps)(CardContainer);

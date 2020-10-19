@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 import Home from './components/Home';
 import Plant from './components/Plant';
+import ItemsContainer from './containers/ItemContainer';
 import { BrowserRouter as Router, Route, NavLink } from "react-router-dom";
 
 
