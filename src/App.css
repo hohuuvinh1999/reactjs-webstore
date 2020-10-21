@@ -81,3 +81,17 @@ a {
   font-size: 110%;
   line-height: 39px;
 }
+
+/* ItemContent */
+@media only screen and (max-width: 482px) {
+  #page--content__box {
+    width: 96% !important;
+    margin-top: -15px !important;
+  }
+  #page--content--image__box {
+    margin-bottom: 0px !important;
+  }
+  #page--content--text__box {
+    margin-top: 0px !important;
+  }
+}
