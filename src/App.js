@@ -3,6 +3,7 @@ import './App.css';
 import Home from './components/Home';
 import Plant from './components/Plant';
 import ItemsContainer from './containers/ItemContainer';
+import ItemContentContainer from './containers/ItemContentContainer';
 import { BrowserRouter as Router, Route, NavLink } from "react-router-dom";
 
 
@@ -13,8 +14,11 @@ export default class App extends Component {
         <Route exact path="/">
           <Home />
         </Route>
-        <Route exact path="/about">
+        <Route exact path="/bang-gia">
           <Plant />
+        </Route>
+        <Route exact path="/san-pham/:id">
+          <ItemContentContainer />
         </Route>
       </Router>
 

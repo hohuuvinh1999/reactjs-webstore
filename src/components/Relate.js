@@ -1,17 +1,16 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, NavLink } from "react-router-dom";
 
-export default class Item extends Component {
-
+export default class Relate extends Component {
     render() {
         var { item2, index } = this.props;
+        console.log(item2);
         return (
-
-            <div className="col-12 col-xs-12 col-sm-12 col-md-6 col-lg-4 p-2">
+            <div className="col-12 col-xs-12 col-sm-12 col-md-6 col-lg-3 p-2">
                 <NavLink exact to={`/san-pham/${item2.id}`}>
                     <div style={{ width: '100%', background: '#fff', position: 'relative' }}>
                         <div className="mb-0" style={{ width: '100%', height: '400px', background: '#fff' }}>
-                            <img src={`image/web/` + item2.image} width="100%" height="100%" style={{ objectFit: 'cover' }} />
+                            <img src={`../image/web/` + item2.image} width="100%" height="100%" style={{ objectFit: 'cover' }} />
                             <div style={{ width: '100px', position: 'absolute', marginTop: '-380px', display: 'flex' }}>
                                 <div style={{ width: '30px', height: '30px', background: '#e43636' }} />
                                 <div style={{ width: '70px', height: '30px', background: '#f94747' }}>
@@ -27,7 +26,6 @@ export default class Item extends Component {
                     </div>
                 </NavLink>
             </div>
-
         )
     }
 }
