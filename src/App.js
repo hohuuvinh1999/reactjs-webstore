@@ -4,6 +4,7 @@ import Home from './components/Home';
 import Plant from './components/Plant';
 import ItemsContainer from './containers/ItemContainer';
 import ItemContentContainer from './containers/ItemContentContainer';
+import PaymentContent from './components/PaymentContent';
 import { BrowserRouter as Router, Route, NavLink } from "react-router-dom";
 
 
@@ -19,6 +20,9 @@ export default class App extends Component {
         </Route>
         <Route exact path="/san-pham/:id">
           <ItemContentContainer />
+        </Route>
+        <Route exact path="/thanh-toan/:id">
+          <PaymentContent />
         </Route>
       </Router>
 

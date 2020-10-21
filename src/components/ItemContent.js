@@ -1,10 +1,8 @@
 import React, { useEffect } from 'react';
-import PropTypes from 'prop-types';
 import { useParams } from 'react-router-dom';
-import { actFetchItemsRequest } from './../actions/index';
-import { connect } from 'react-redux';
 import Header from './Header';
 import RelateContainer from './../containers/RelateContainer';
+import { BrowserRouter as Router, Route, NavLink } from "react-router-dom";
 
 function ItemContent(props) {
     useEffect(() => {
@@ -66,7 +64,9 @@ function ItemContent(props) {
                                                     <div className="btn btn-danger" style={{ width: '100%' }}><i className="fa fa-eye mr-3" aria-hidden="true" />Xem trước</div>
                                                 </div>
                                                 <div className="col-6 col-md-6 col-lg-3 p-2">
-                                                    <div className="btn btn-danger bg" style={{ width: '100%' }}><i className="fa fa-shopping-cart mr-3" aria-hidden="true" />Đặt mua</div>
+                                                    <NavLink exact to={`/thanh-toan/${item.id}`}>
+                                                        <div className="btn btn-danger bg" style={{ width: '100%' }}><i className="fa fa-shopping-cart mr-3" aria-hidden="true" />Đặt mua</div>
+                                                    </NavLink>
                                                 </div>
                                                 <div className="col-6 col-md-6 col-lg-3 p-2">
                                                     <div className="btn btn-danger" style={{ width: '100%' }}><i className="fa fa-phone mr-3" aria-hidden="true" />Gọi</div>
@@ -97,7 +97,7 @@ function ItemContent(props) {
                                 <div className="row m-0">
                                     <div className="col-12">
                                         <div className="p-4" style={{ width: '80%', margin: 'auto', position: 'relative' }}>
-                                            <img src="../image/web/mac1.png" style={{ width: '100%' }} />
+                                            <img src="../image/web/2mac.png" style={{ width: '100%' }} />
                                         </div>
                                     </div>
                                     <div className="col-12 col-md-6">
@@ -127,16 +127,5 @@ function ItemContent(props) {
     )
 
 }
-const mapStateToProps = state => {
-    return {
-        ItemRD: state.ItemRD
-    }
-}
-const mapDispatchToProps = (dispatch, props) => {
-    return {
-        fetchAllItems: () => {
-            dispatch(actFetchItemsRequest());
-        }
-    }
-}
-export default connect(mapStateToProps, mapDispatchToProps)(ItemContent);
+
+export default ItemContent;
