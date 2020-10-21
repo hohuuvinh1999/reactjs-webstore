@@ -2,6 +2,9 @@ import React, { Component } from 'react';
 import PlantItem from './PlantItem';
 
 export default class PlantContent extends Component {
+    componentDidMount() {
+        window.scrollTo(0, 0)
+    }
     render() {
         return (
             <div style={{ paddingTop: '70px' }}>

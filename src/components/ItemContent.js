@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { useParams } from 'react-router-dom';
 import { actFetchItemsRequest } from './../actions/index';
@@ -7,6 +7,9 @@ import Header from './Header';
 import RelateContainer from './../containers/RelateContainer';
 
 function ItemContent(props) {
+    useEffect(() => {
+        window.scrollTo(0, 0)
+    }, [])
 
     const { id } = useParams();
     const ITEM = props.item;
